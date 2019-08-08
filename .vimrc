@@ -1,6 +1,6 @@
 "" 显示行号 语法高亮
 set encoding=utf-8
-set nu              
+set nu
 syntax on
 set foldenable
 set foldmethod=manual
@@ -22,29 +22,87 @@ set selection=exclusive
 set selectmode=mouse,key
 
 
-autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()" 
+autocmd BufNewFile *.cpp,*.hpp,*.[ch],*.sh,*.cu,*.cc exec ":call SetTitle()" 
 ""定义函数SetTitle，自动插入文件头 
-func SetTitle() 
-    if &filetype == 'cpp'
-        call setline(1,"//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++") 
-        call append(line("."), "// File Name: ".expand("%")) 
-        call append(line(".")+1, "// Author   : ElonKou")
-        call append(line(".")+2, "// Email    : elonkou@ktime.cc")
-        call append(line(".")+3, "// Date     : ".strftime("%c"))
-        call append(line(".")+4,"//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++") 
-        call append(line(".")+5, "")
-        call append(line(".")+6, "#include <iostream>")
-        call append(line(".")+7, "using namespace std;")
-        call append(line(".")+8, "")
-        call append(line(".")+9, "int main(int argc, char *argv[])")
-        call append(line(".")+10, "{")
-        call append(line(".")+11, "    cout << \"Hello,world!\";")
+func SetTitle()
+    if expand("%:e") == 'cpp' || expand("%:e") == 'cc'
+        call setline(1         , "/*================================================================") 
+        call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
+        call append(line(".")+1, "*  FileName : ".expand("%")) 
+        call append(line(".")+2, "*  Author   : ElonKou")
+        call append(line(".")+3, "*  Email    : elonkou@ktime.cc")
+        call append(line(".")+4, "*  Date     : ".strftime("%c"))
+        call append(line(".")+5, "================================================================*/") 
+        call append(line(".")+6, "")
+        call append(line(".")+7, "#include <iostream>")
+        call append(line(".")+8, "using namespace std;")
+        call append(line(".")+9, "")
+        call append(line(".")+10, "int main(int argc, char *argv[]){")
+        call append(line(".")+11, "    cout << \"Hello,elonkou!\";")
         call append(line(".")+12, "    return 0;")
         call append(line(".")+13, "}")
     endif
-    if &filetype == 'c'
-        call append(line(".")+6, "#include<stdio.h>")
-        call append(line(".")+7, "")
+    if expand("%:e") == 'c'
+        call setline(1         , "/*================================================================") 
+        call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
+        call append(line(".")+1, "*  FileName : ".expand("%")) 
+        call append(line(".")+2, "*  Author   : ElonKou")
+        call append(line(".")+3, "*  Email    : elonkou@ktime.cc")
+        call append(line(".")+4, "*  Date     : ".strftime("%c"))
+        call append(line(".")+5, "================================================================*/") 
+        call append(line(".")+6, "")
+        call append(line(".")+7, "#include <stdio.h>")
+        call append(line(".")+8, "")
+        call append(line(".")+9, "int main(int argc, char *argv[]){")
+        call append(line(".")+10, "    printf(\"Hello,elonkou!\");")
+        call append(line(".")+11, "    return 0;")
+        call append(line(".")+12, "}")
+    endif
+    if expand("%:e") == 'cu'
+        call setline(1         , "/*================================================================") 
+        call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
+        call append(line(".")+1, "*  FileName : ".expand("%")) 
+        call append(line(".")+2, "*  Author   : ElonKou")
+        call append(line(".")+3, "*  Email    : elonkou@ktime.cc")
+        call append(line(".")+4, "*  Date     : ".strftime("%c"))
+        call append(line(".")+5, "================================================================*/") 
+        call append(line(".")+6, "")
+        call append(line(".")+7, "#include <stdio.h>")
+        call append(line(".")+8, "")
+        call append(line(".")+9, "__global__ void func(){")
+        call append(line(".")+10, "    printf(\"id:%d\\n\", threadIdx.x);")
+        call append(line(".")+11, "}")
+        call append(line(".")+12, "")
+        call append(line(".")+13, "int main(int argc, char *argv[]){")
+        call append(line(".")+14, "    func<<<1, 10>>>();")
+        call append(line(".")+15, "    return 0;")
+        call append(line(".")+16, "}")
+    endif
+    if expand("%:e") == 'h' || expand("%:e") == 'hh'
+        call setline(1         , "#pragma once") 
+    endif
+    if expand("%:e") == 'hpp'
+        call setline(1         , "/*================================================================") 
+        call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
+        call append(line(".")+1, "*  FileName : ".expand("%")) 
+        call append(line(".")+2, "*  Author   : ElonKou")
+        call append(line(".")+3, "*  Email    : elonkou@ktime.cc")
+        call append(line(".")+4, "*  Date     : ".strftime("%c"))
+        call append(line(".")+5, "================================================================*/") 
+        call append(line(".")+6, "#ifndef _".toupper(expand("%:t:r"))."_H")
+        call append(line(".")+7, "#define _".toupper(expand("%:t:r"))."_H") 
+        call append(line(".")+8, "#ifdef __cplusplus") 
+        call append(line(".")+9, "extern \"C\"") 
+        call append(line(".")+10, "{") 
+        call append(line(".")+11, "#endif") 
+        call append(line(".")+12, "") 
+        call append(line(".")+13, "#ifdef __cplusplus") 
+        call append(line(".")+14, "}") 
+        call append(line(".")+15, "#endif") 
+        call append(line(".")+16, "#endif //".toupper(expand("%:t:r"))."_H")
+    endif
+    if expand("%:e") == 'sh'
+        call setline(1, "#!/bin/bash") 
     endif
     autocmd BufNewFile * normal G
 endfunc 
@@ -62,5 +120,8 @@ func! CompileRunGcc()
         exec "! ./%<"
     elseif &filetype == 'sh'
         :!./%
+    elseif &filetype == 'cu'
+        exec "!nvcc % -o %<"
+        exec "! ./%<"
     endif
 endfunc
