@@ -1,4 +1,4 @@
-*.hh"" 显示行号 语法高亮
+" 显示行号 语法高亮
 set encoding=utf-8
 set nu
 syntax on
