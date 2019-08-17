@@ -1,4 +1,4 @@
-"" 显示行号 语法高亮
+*.hh"" 显示行号 语法高亮
 set encoding=utf-8
 set nu
 syntax on
@@ -22,7 +22,7 @@ set selection=exclusive
 set selectmode=mouse,key
 
 
-autocmd BufNewFile *.cpp,*.hpp,*.[ch],*.sh,*.cu,*.cc exec ":call SetTitle()" 
+autocmd BufNewFile *.hh,*.cpp,*.hpp,*.[ch],*.sh,*.cu,*.cc exec ":call SetTitle()" 
 ""定义函数SetTitle，自动插入文件头 
 func SetTitle()
     if expand("%:e") == 'cpp' || expand("%:e") == 'cc'
