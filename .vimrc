@@ -1,4 +1,8 @@
-" 显示行号 语法高亮
+" 基础配置
+let USER_NAME = $USER
+let USER_EMAIL = 'elonkou@ktime.cc'
+
+"" 显示行号 语法高亮
 set encoding=utf-8
 set nu
 syntax on
@@ -20,7 +24,9 @@ set expandtab
 set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
-
+if has("mouse")
+    set mouse-=a
+endif
 
 autocmd BufNewFile *.hh,*.cpp,*.hpp,*.[ch],*.sh,*.cu,*.cc exec ":call SetTitle()" 
 ""定义函数SetTitle，自动插入文件头 
@@ -29,8 +35,8 @@ func SetTitle()
         call setline(1         , "/*================================================================") 
         call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
         call append(line(".")+1, "*  FileName : ".expand("%")) 
-        call append(line(".")+2, "*  Author   : ElonKou")
-        call append(line(".")+3, "*  Email    : elonkou@ktime.cc")
+        call append(line(".")+2, "*  Author   : ".g:USER_NAME)
+        call append(line(".")+3, "*  Email    : ".g:USER_EMAIL)
         call append(line(".")+4, "*  Date     : ".strftime("%c"))
         call append(line(".")+5, "================================================================*/") 
         call append(line(".")+6, "")
@@ -46,8 +52,8 @@ func SetTitle()
         call setline(1         , "/*================================================================") 
         call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
         call append(line(".")+1, "*  FileName : ".expand("%")) 
-        call append(line(".")+2, "*  Author   : ElonKou")
-        call append(line(".")+3, "*  Email    : elonkou@ktime.cc")
+        call append(line(".")+2, "*  Author   : ".g:USER_NAME)
+        call append(line(".")+3, "*  Email    : ".g:USER_EMAIL)
         call append(line(".")+4, "*  Date     : ".strftime("%c"))
         call append(line(".")+5, "================================================================*/") 
         call append(line(".")+6, "")
@@ -62,8 +68,8 @@ func SetTitle()
         call setline(1         , "/*================================================================") 
         call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
         call append(line(".")+1, "*  FileName : ".expand("%")) 
-        call append(line(".")+2, "*  Author   : ElonKou")
-        call append(line(".")+3, "*  Email    : elonkou@ktime.cc")
+        call append(line(".")+2, "*  Author   : ".g:USER_NAME)
+        call append(line(".")+3, "*  Email    : ".g:USER_EMAIL)
         call append(line(".")+4, "*  Date     : ".strftime("%c"))
         call append(line(".")+5, "================================================================*/") 
         call append(line(".")+6, "")
@@ -85,8 +91,8 @@ func SetTitle()
         call setline(1         , "/*================================================================") 
         call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
         call append(line(".")+1, "*  FileName : ".expand("%")) 
-        call append(line(".")+2, "*  Author   : ElonKou")
-        call append(line(".")+3, "*  Email    : elonkou@ktime.cc")
+        call append(line(".")+2, "*  Author   : ".g:USER_NAME)
+        call append(line(".")+3, "*  Email    : ".g:USER_EMAIL)
         call append(line(".")+4, "*  Date     : ".strftime("%c"))
         call append(line(".")+5, "================================================================*/") 
         call append(line(".")+6, "#ifndef _".toupper(expand("%:t:r"))."_H")
@@ -116,7 +122,7 @@ func! CompileRunGcc()
         exec "!g++ % -o %<"
         exec "! ./%<"
     elseif &filetype == 'cpp'
-        exec "!g++ % -o %<"
+        exec "!g++ % -o %< -std=c++11"
         exec "! ./%<"
     elseif &filetype == 'sh'
         :!./%
