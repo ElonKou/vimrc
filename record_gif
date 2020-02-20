@@ -1,0 +1,34 @@
+#!/bin/bash
+echo "/*========================================================================"
+echo "* sudo apt-get install xdotool"
+echo "* sudo apt-get install byzanz"
+echo "* look at xwininfo to check position of window."
+echo "* xdotool getmouselocation will print position of mouse whne click enter."
+echo "* byzanz-record -d 10 -x 2712 -y 287 -w 500 -h 530 --delay=1 -v test.gif"
+echo "========================================================================*/"
+
+wsleep=2
+
+sleep $wsleep
+xx=$(xdotool getmouselocation)
+IFS=" " 
+arr=($xx)
+s_x="${arr[0]:2}"
+s_y="${arr[1]:2}"
+echo "mouse catched:("$s_x", "$s_y")"
+
+sleep $wsleep
+yy=$(xdotool getmouselocation)
+IFS=" " 
+arr=($yy)
+e_x="${arr[0]:2}"
+e_y="${arr[1]:2}"
+echo "mouse catched:("$e_x", "$e_y")"
+
+sleep $wsleep
+w=$(($e_x-$s_x))
+h=$(($e_y-$s_y))
+cmd="byzanz-record -d $2 -x $s_x -y $s_y -w $w -h $h --delay=1 -v $1"
+echo $cmd
+${cmd}
+eog $1

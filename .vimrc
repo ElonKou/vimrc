@@ -33,7 +33,7 @@ autocmd BufNewFile *.hh,*.cpp,*.hpp,*.[ch],*.sh,*.cu,*.cc exec ":call SetTitle()
 func SetTitle()
     if expand("%:e") == 'cpp' || expand("%:e") == 'cc'
         call setline(1         , "/*================================================================") 
-        call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
+        call append(line(".")  , "*  Copyright (C)2020 All rights reserved.") 
         call append(line(".")+1, "*  FileName : ".expand("%")) 
         call append(line(".")+2, "*  Author   : ".g:USER_NAME)
         call append(line(".")+3, "*  Email    : ".g:USER_EMAIL)
@@ -50,7 +50,7 @@ func SetTitle()
     endif
     if expand("%:e") == 'c'
         call setline(1         , "/*================================================================") 
-        call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
+        call append(line(".")  , "*  Copyright (C)2020 All rights reserved.") 
         call append(line(".")+1, "*  FileName : ".expand("%")) 
         call append(line(".")+2, "*  Author   : ".g:USER_NAME)
         call append(line(".")+3, "*  Email    : ".g:USER_EMAIL)
@@ -66,7 +66,7 @@ func SetTitle()
     endif
     if expand("%:e") == 'cu'
         call setline(1         , "/*================================================================") 
-        call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
+        call append(line(".")  , "*  Copyright (C)2020 All rights reserved.") 
         call append(line(".")+1, "*  FileName : ".expand("%")) 
         call append(line(".")+2, "*  Author   : ".g:USER_NAME)
         call append(line(".")+3, "*  Email    : ".g:USER_EMAIL)
@@ -92,7 +92,7 @@ func SetTitle()
     endif
     if expand("%:e") == 'hpp'
         call setline(1         , "/*================================================================") 
-        call append(line(".")  , "*  Copyright (C)2019 All rights reserved.") 
+        call append(line(".")  , "*  Copyright (C)2020 All rights reserved.") 
         call append(line(".")+1, "*  FileName : ".expand("%")) 
         call append(line(".")+2, "*  Author   : ".g:USER_NAME)
         call append(line(".")+3, "*  Email    : ".g:USER_EMAIL)
