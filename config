@@ -1,0 +1,116 @@
+[global_config]
+  borderless = True
+  focus = system
+  handle_size = 2
+  inactive_color_offset = 0.78
+  scroll_tabbar = True
+  suppress_multiple_term_dialog = True
+  title_font = Monospace 11
+  title_hide_sizetext = True
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 565c97dd-f533-49c4-bcad-26717d561ebc
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 1920:24
+      size = 1920, 1056
+      title = maxsense@gumu: ~/codes/autonomous_driving/src/perception/ros/ms_perception_camera_object_detect
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 525
+      ratio = 0.5
+      type = VPaned
+    [[[child10]]]
+      order = 1
+      parent = child6
+      position = 247
+      ratio = 0.47619047619
+      type = VPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 1172
+      ratio = 0.611979166667
+      type = HPaned
+    [[[child5]]]
+      order = 1
+      parent = child1
+      position = 1325
+      ratio = 0.691666666667
+      type = HPaned
+    [[[child6]]]
+      order = 0
+      parent = child5
+      position = 637
+      ratio = 0.483018867925
+      type = HPaned
+    [[[child7]]]
+      order = 0
+      parent = child6
+      position = 247
+      ratio = 0.47619047619
+      type = VPaned
+    [[[terminal11]]]
+      order = 0
+      parent = child10
+      profile = default
+      type = Terminal
+      uuid = 8d3d8668-5f6d-4c2e-8dca-b320b265e3c9
+    [[[terminal12]]]
+      order = 1
+      parent = child10
+      profile = default
+      type = Terminal
+      uuid = 6f984c0a-fd13-4446-923e-20161d88f137
+    [[[terminal13]]]
+      order = 1
+      parent = child5
+      profile = default
+      type = Terminal
+      uuid = 482f51e7-ea96-4fc4-b84e-7ccd02a42ded
+    [[[terminal3]]]
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 565c97dd-f533-49c4-bcad-26717d561ebc
+    [[[terminal4]]]
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 9940ae47-b780-4901-ab6d-546c0729ee98
+    [[[terminal8]]]
+      order = 0
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = 4953b75f-44ef-405f-8a85-86b223a691af
+    [[[terminal9]]]
+      order = 1
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = 96ac5c47-a43d-4131-b780-49d0004ccd42
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#300a24"
+    background_darkness = 0.57
+    background_image = None
+    background_type = transparent
+    cursor_shape = ibeam
+    font = Monospace 12
+    foreground_color = "#ffffff"
+    icon_bell = False
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
