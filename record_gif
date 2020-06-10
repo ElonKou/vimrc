@@ -1,11 +1,13 @@
 #!/bin/bash
-echo "/*========================================================================"
-echo "* sudo apt-get install xdotool"
-echo "* sudo apt-get install byzanz"
-echo "* look at xwininfo to check position of window."
-echo "* xdotool getmouselocation will print position of mouse whne click enter."
-echo "* byzanz-record -d 10 -x 2712 -y 287 -w 500 -h 530 --delay=1 -v test.gif"
-echo "========================================================================*/"
+echo "/*=========================================================================================="
+echo "* [Record gif iamge on ubuntu.]"
+echo "* Please install software when first use this tool."
+echo "* sudo apt-get install xdotool byzanz"
+echo "* position: look at xwininfo to check position of window."
+echo "* xdotool getmouselocation will print position of mouse when click enter."
+echo "* ORIGIN COMMAND: byzanz-record -d 10 -x 2712 -y 287 -w 500 -h 530 --delay=1 -v test.gif"
+echo "* USAGE: ./record_gif name.gif 20"
+echo "===========================================================================================*/"
 
 wsleep=2
 
