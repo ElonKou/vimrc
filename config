@@ -25,57 +25,15 @@
     [[[child1]]]
       order = 0
       parent = child0
-      position = 525
+      position = 527
       ratio = 0.5
-      type = VPaned
-    [[[child10]]]
-      order = 1
-      parent = child6
-      position = 247
-      ratio = 0.47619047619
       type = VPaned
     [[[child2]]]
       order = 0
       parent = child1
-      position = 1172
+      position = 1174
       ratio = 0.611979166667
       type = HPaned
-    [[[child5]]]
-      order = 1
-      parent = child1
-      position = 1325
-      ratio = 0.691666666667
-      type = HPaned
-    [[[child6]]]
-      order = 0
-      parent = child5
-      position = 637
-      ratio = 0.483018867925
-      type = HPaned
-    [[[child7]]]
-      order = 0
-      parent = child6
-      position = 247
-      ratio = 0.47619047619
-      type = VPaned
-    [[[terminal11]]]
-      order = 0
-      parent = child10
-      profile = default
-      type = Terminal
-      uuid = 8d3d8668-5f6d-4c2e-8dca-b320b265e3c9
-    [[[terminal12]]]
-      order = 1
-      parent = child10
-      profile = default
-      type = Terminal
-      uuid = 6f984c0a-fd13-4446-923e-20161d88f137
-    [[[terminal13]]]
-      order = 1
-      parent = child5
-      profile = default
-      type = Terminal
-      uuid = 482f51e7-ea96-4fc4-b84e-7ccd02a42ded
     [[[terminal3]]]
       order = 0
       parent = child2
@@ -88,18 +46,12 @@
       profile = default
       type = Terminal
       uuid = 9940ae47-b780-4901-ab6d-546c0729ee98
-    [[[terminal8]]]
-      order = 0
-      parent = child7
+    [[[terminal5]]]
+      order = 1
+      parent = child1
       profile = default
       type = Terminal
       uuid = 4953b75f-44ef-405f-8a85-86b223a691af
-    [[[terminal9]]]
-      order = 1
-      parent = child7
-      profile = default
-      type = Terminal
-      uuid = 96ac5c47-a43d-4131-b780-49d0004ccd42
 [plugins]
 [profiles]
   [[default]]
